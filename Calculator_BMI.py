@@ -6,4 +6,3 @@ imt = round(c) - 15
 result = graf[:imt] + "|" + graf[imt + 1:]
 print("Ваш индекс массы тела: ", c)
 print (result)
-#test pull req
