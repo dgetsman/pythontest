@@ -1,8 +1,15 @@
-def main(login, *args, **kwargs):
-    if login != "admin":
-        def dec(login):
-            return
-        return print("Доступ запрещен!")
-    else:
-        return print("Сумма на счету: 2р")
-login = main(input("Введите логин: "))
+def decorator(func):
+    # @functools.wraps(func)
+    def wrapper_decorator(*args, **kwargs):
+        user = input("Введите логин: ")
+        if user == 'admin':
+            valadue = func(*args, **kwargs)
+        else:
+            return print('Доступ запрещен!')
+        # Do something after
+    return wrapper_decorator
+
+@decorator
+def main():
+    print("Сумма на счету 2р")
+main()
